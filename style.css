@@ -3,44 +3,41 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   text-align: center;
-  margin: 0;
-  padding: 0;
+  margin: 20px;
 }
-
 .container {
-  max-width: 500px;
-  margin: 50px auto;
-  background: #fff;
+  max-width: 400px;
+  margin: auto;
+  background: white;
   padding: 20px;
+  border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-input[type="text"] {
-  width: 70%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  padding: 10px 15px;
-  border: none;
-  background: #333;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #555;
-}
-
 ul {
   list-style: none;
   padding: 0;
 }
-
-ul li {
+li {
+  background: #eee;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+button.complete {
+  background: green;
 }

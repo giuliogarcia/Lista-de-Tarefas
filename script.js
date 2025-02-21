@@ -1,12 +1,25 @@
 // Lógica em JavaScript
-document.getElementById("addButton").addEventListener("click", function () {
-  var tarefaInput = document.getElementById("tarefaInput");
-  var tarefa = tarefaInput.value;
+function addTask() {
+  let taskInput = document.getElementById("taskInput");
+  let taskText = taskInput.value.trim();
+  if (taskText === "") return;
 
-  if (tarefa.trim() !== "") {
-    var li = document.createElement("li");
-    li.textContent = tarefa;
-    document.getElementById("listaTarefas").appendChild(li);
-    tarefaInput.value = "";
-  }
-});
+  let li = document.createElement("li");
+  li.innerHTML = `
+        <span>${taskText}</span>
+        <button class="complete" onclick="markComplete(this)">✔</button>
+        <button onclick="removeTask(this)">❌</button>
+    `;
+  document.getElementById("taskList").appendChild(li);
+  taskInput.value = "";
+}
+
+function markComplete(button) {
+  let li = button.parentElement;
+  li.classList.toggle("completed");
+}
+
+function removeTask(button) {
+  let li = button.parentElement;
+  li.remove();
+}
